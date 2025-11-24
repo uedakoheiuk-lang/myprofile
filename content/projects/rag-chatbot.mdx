@@ -1,0 +1,39 @@
+---
+title: 社内規程を即時回答するRAGチャットボット構築
+slug: rag-chatbot
+tags: ["Python", "LangChain", "OpenAI API", "RAG", "伴走支援"]
+date: 2024-11-25
+description: "総務部への問い合わせを自動化するRAGチャットボット。月間20時間の工数削減を実現。"
+---
+title: 社内規程を即時回答するRAGチャットボット構築
+slug: rag-chatbot
+tags: ["Python", "LangChain", "OpenAI API", "RAG", "伴走支援"]
+date: 2024-11-25
+description: "総務部への問い合わせを自動化するRAGチャットボット。月間20時間の工数削減を実現。"
+---
+
+## 案件の背景と課題（Before）
+
+総務部への「交通費精算のルールは？」といった定型的な問い合わせが**月200件**発生し、コア業務を圧迫していました。既存のマニュアルはPDF数百枚に及び、誰も読んでいない状態でした。
+
+## 提案した解決策と技術選定（Why）
+
+単純なキーワード検索では解決できないため、LLMとベクトル検索データベースを組み合わせた **RAG (Retrieval-Augmented Generation)** アーキテクチャを採用しました。
+
+![RAGチャットボット UIサンプル](/images/projects/rag-chatbot/ui.png)
+
+### システム構成図
+<DiagramComponent code={`
+graph TD
+    A[従業員] -->|質問(LINE)| B(Next.js API)
+    B -->|Embedding & Query| C[Pinecone/Vector DB]
+    C -->|Context| D[AWS Lambda/FastAPI]
+    D -->|Final Prompt| E[OpenAI API]
+    E -->|回答| B
+`} />
+
+![システム構成図サンプル](/images/projects/rag-chatbot/architecture.png)
+
+## 成果と提供価値（After）
+
+システム導入の結果、総務部門の対応工数が**月間20時間（40%）削減**されました。現在は GPT-4o へのモデル移行と、人事規定への対応範囲拡大を支援中です。
