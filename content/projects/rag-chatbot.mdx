@@ -5,12 +5,6 @@ tags: ["Python", "LangChain", "OpenAI API", "RAG", "伴走支援"]
 date: 2024-11-25
 description: "総務部への問い合わせを自動化するRAGチャットボット。月間20時間の工数削減を実現。"
 ---
-title: 社内規程を即時回答するRAGチャットボット構築
-slug: rag-chatbot
-tags: ["Python", "LangChain", "OpenAI API", "RAG", "伴走支援"]
-date: 2024-11-25
-description: "総務部への問い合わせを自動化するRAGチャットボット。月間20時間の工数削減を実現。"
----
 
 ## 案件の背景と課題（Before）
 
@@ -25,11 +19,11 @@ description: "総務部への問い合わせを自動化するRAGチャットボ
 ### システム構成図
 <DiagramComponent code={`
 graph TD
-    A[従業員] -->|質問(LINE)| B(Next.js API)
-    B -->|Embedding & Query| C[Pinecone/Vector DB]
-    C -->|Context| D[AWS Lambda/FastAPI]
-    D -->|Final Prompt| E[OpenAI API]
-    E -->|回答| B
+    A["従業員"] -->|"質問(LINE)"| B("Next.js API")
+    B -->|"Embedding & Query"| C["Pinecone/Vector DB"]
+    C -->|"Context"| D["AWS Lambda/FastAPI"]
+    D -->|"Final Prompt"| E["OpenAI API"]
+    E -->|"回答"| B
 `} />
 
 ![システム構成図サンプル](/images/projects/rag-chatbot/architecture.png)

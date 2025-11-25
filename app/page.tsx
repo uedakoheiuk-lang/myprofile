@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import { ProjectCard } from "@/components/ProjectCard";
+import { getAllProjectsMeta } from "@/lib/projects";
 import { Brain, Rocket, Target, Users, Code, LineChart } from "lucide-react";
 
 export default function Home() {
@@ -79,7 +80,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Selected Works</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">All Projects</h2>
               <p className="text-zinc-400">Recent projects and technical case studies.</p>
             </div>
             <Button asChild variant="ghost" className="group">
@@ -91,25 +92,16 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Placeholder Projects - will be dynamic later or manually updated */}
-            <ProjectCard
-              title="AI Agent Platform"
-              description="A multi-agent system for automating enterprise workflows using LangGraph."
-              tags={["Next.js", "Python", "LangChain"]}
-              href="/projects/ai-agent-platform"
-            />
-            <ProjectCard
-              title="SaaS MVP Development"
-              description="Rapid MVP development for a FinTech startup, leading to Series A funding."
-              tags={["React", "Node.js", "AWS"]}
-              href="/projects/saas-mvp"
-            />
-            <ProjectCard
-              title="RAG Knowledge Base"
-              description="Enterprise-grade RAG system processing 1M+ documents with sub-second latency."
-              tags={["Vector DB", "OpenAI", "FastAPI"]}
-              href="/projects/rag-kb"
-            />
+            {/* Dynamic Projects */}
+            {getAllProjectsMeta().slice(0, 3).map((project: any) => (
+              <ProjectCard
+                key={project.slug}
+                title={project.title}
+                description={project.description || "No description available."}
+                tags={project.tags || []}
+                href={`/projects/${project.slug}`}
+              />
+            ))}
           </div>
         </div>
       </section>
