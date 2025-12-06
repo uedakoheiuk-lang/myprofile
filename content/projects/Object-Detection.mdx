@@ -6,27 +6,19 @@ date: 2024-11-26
 description: "撮影された画像を認識し、劣化状況・被害程度・被害面積を推定する"
 ---
 
-## 案件の背景と課題（Before）
+<h2 className="text-3xl font-bold mt-12 mb-6">◆案件の背景と課題</h2>
 
 劣化診断には専門の知識が必要なため、属人化しており、工数を削減することができませんでした。
 また、少子高齢化により、劣化診断の専門家の不足が問題視されていました。
 
-## 提案した解決策と技術選定（Why）
+<h2 className="text-3xl font-bold mt-12 mb-6">◆提案した解決策と技術選定</h2>
 
 YOLOv8を用いて、劣化診断を自動化するシステムを構築しました。
 
 ![画像診断 sample](/images/projects/Object-Detection/sample.png)
 
-### システム構成図
-<DiagramComponent code={`
-graph TD
-    A["ユーザー"] -->|"画像アップロード"| B("Next.js API")
-    B -->|"画像データ"| C["Python/YOLOv8"]
-    C -->|"推論実行"| D["劣化検知・解析"]
-    D -->|"解析結果(JSON/画像)"| B
-    B -->|"診断レポート"| A
-`} />
-
-## 成果と提供価値（After）
+<h2 className="text-3xl font-bold mt-12 mb-6">◆成果と提供価値</h2>
 
 システム導入の結果、工数削減が**月間20時間（40%）削減**されました。現在は 対応範囲拡大を支援中です。
+
+<ImpactChart />

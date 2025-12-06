@@ -3,6 +3,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getProjectData, getSlugs } from '@/lib/projects';
 import remarkGfm from 'remark-gfm';
 import DiagramComponent from '@/components/DiagramComponent';
+import { ImpactChart } from '@/components/charts/ImpactChart';
+import { IssueChart } from '@/components/charts/IssueChart';
+import { AnomalyImpactChart } from '@/components/charts/AnomalyImpactChart';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
@@ -77,7 +80,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 remarkPlugins: [remarkGfm],
                             }
                         }}
-                        components={{ DiagramComponent }}
+                        components={{ DiagramComponent, ImpactChart, IssueChart, AnomalyImpactChart }}
                     />
                 </article>
             </div>
