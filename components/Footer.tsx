@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Twitter, Linkedin } from "lucide-react";
+import { ScrollToTop } from "./ScrollToTop";
 
 export function Footer() {
     return (
@@ -9,19 +10,22 @@ export function Footer() {
                     © {new Date().getFullYear()} AI Engineer Portfolio. All rights reserved.
                 </p>
 
-                <div className="flex gap-6">
-                    <Link href="https://github.com" className="text-zinc-500 hover:text-white transition-colors">
-                        <Github className="h-5 w-5" />
-                        <span className="sr-only">GitHub</span>
-                    </Link>
-                    <Link href="https://twitter.com" className="text-zinc-500 hover:text-white transition-colors">
-                        <Twitter className="h-5 w-5" />
-                        <span className="sr-only">Twitter</span>
-                    </Link>
-                    <Link href="https://linkedin.com" className="text-zinc-500 hover:text-white transition-colors">
-                        <Linkedin className="h-5 w-5" />
-                        <span className="sr-only">LinkedIn</span>
-                    </Link>
+                <div className="flex items-center gap-6">
+                    <ScrollToTop />
+                    <div className="flex gap-6">
+                        <Link href="https://github.com" className="text-zinc-500 hover:text-white transition-colors">
+                            <Github className="h-5 w-5" />
+                            <span className="sr-only">GitHub</span>
+                        </Link>
+                        <Link href="https://twitter.com" className="text-zinc-500 hover:text-white transition-colors">
+                            <Twitter className="h-5 w-5" />
+                            <span className="sr-only">Twitter</span>
+                        </Link>
+                        <Link href="https://linkedin.com" className="text-zinc-500 hover:text-white transition-colors">
+                            <Linkedin className="h-5 w-5" />
+                            <span className="sr-only">LinkedIn</span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>
