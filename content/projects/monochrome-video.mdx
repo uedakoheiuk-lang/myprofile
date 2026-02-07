@@ -1,0 +1,35 @@
+---
+title: モノクロ画像のカラー化と動画生成
+slug: monochrome-video
+tags: ["Python", "Generative AI", "Video Generation"]
+date: 2024-12-07
+description: "モノクロ画像をカラー化し、さらに自然な動きを付与して動画化するAIシステム。"
+---
+
+<h2 className="text-3xl font-bold mt-12 mb-6">◆案件の背景と課題</h2>
+
+過去の貴重な写真データはモノクロで保存されているものが多く、当時の状況や空気感をリアルに感じ取ることが難しいという課題がありました。
+静止画だけでなく、動きをつけることで、より深い没入感とリアリティを提供したいというニーズがありました。
+
+<h2 className="text-3xl font-bold mt-12 mb-6">◆提案した解決策と技術選定</h2>
+
+最新の生成AI技術を組み合わせ、以下の2段階のプロセスでシステムを構築しました。
+
+1.  **カラー化**: ディープラーニングを用いて、モノクロ画像に自然な着彩を行います。
+2.  **動画生成**: カラー化した画像をベースに、被写体の動きを予測・生成し、動画へと変換します。
+
+### カラー化の例
+![モノクロ画像](/images/projects/monochrome-video/woman.jpg)
+↓
+![カラー化画像](/images/projects/monochrome-video/color.png)
+
+<h2 className="text-3xl font-bold mt-12 mb-6">◆成果と提供価値</h2>
+
+静止画のカラー化だけでなく、自然な瞬きや表情の動きを含む動画生成に成功しました。
+これにより、歴史的な資料のアーカイブ化や、エンターテインメント分野での新たな表現手法として活用が可能になりました。
+
+### 生成された動画
+<video controls width="100%" className="rounded-lg shadow-lg mt-4">
+  <source src="/images/projects/monochrome-video/__20.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
